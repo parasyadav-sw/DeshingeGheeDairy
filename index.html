@@ -44,14 +44,7 @@
         </div>
       </a>
 
-      <nav class="nav-links" id="navLinks">
-        <button class="nav-close" id="navClose" aria-label="Close menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-        <div class="nav-links-brand">
-          <span class="nav-links-brand-name">Deshinge Dairy Farm</span>
-          <span class="nav-links-brand-tag">Farm To Home</span>
-        </div>
+      <nav class="nav-links-desktop" id="navLinksDesktop">
         <a href="#home" class="nav-link active">Home</a>
         <a href="#ghee" class="nav-link">Our Ghee</a>
         <a href="#story" class="nav-link">Our Story</a>
@@ -75,8 +68,32 @@
     </div>
   </header>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+  <!-- Mobile Drawer (outside navbar) -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <a href="#" class="drawer-logo">
+        <img src="images/Screenshot 2026-07-21 221212.png" alt="Deshinge Dairy Farm" class="drawer-logo-img">
+        <div class="drawer-logo-text">
+          <span class="drawer-logo-name">Deshinge Dairy Farm</span>
+          <span class="drawer-logo-tag">Farm To Home</span>
+        </div>
+      </a>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="#home" class="drawer-link active">Home</a>
+      <a href="#ghee" class="drawer-link">Our Ghee</a>
+      <a href="#story" class="drawer-link">Our Story</a>
+      <a href="#process" class="drawer-link">Process</a>
+      <a href="#benefits" class="drawer-link">Benefits</a>
+      <a href="#reviews" class="drawer-link">Reviews</a>
+      <a href="#faq" class="drawer-link">FAQs</a>
+      <a href="#contact" class="drawer-link">Contact</a>
+    </nav>
+  </aside>
 
   <!-- Hero Section -->
   <section class="hero" id="home">

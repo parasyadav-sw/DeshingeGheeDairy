@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Active Nav Link on Scroll ----
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const desktopLinks = document.querySelectorAll('.nav-links-desktop .nav-link');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
 
   const updateActiveNav = () => {
     const scrollPos = window.scrollY + 120;
@@ -22,54 +23,53 @@ document.addEventListener('DOMContentLoaded', () => {
       const height = section.offsetHeight;
       const id = section.getAttribute('id');
       if (scrollPos >= top && scrollPos < top + height) {
-        navLinks.forEach(link => {
+        desktopLinks.forEach(link => {
           link.classList.remove('active');
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('active');
-          }
+          if (link.getAttribute('href') === `#${id}`) link.classList.add('active');
+        });
+        drawerLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) link.classList.add('active');
         });
       }
     });
   };
   window.addEventListener('scroll', updateActiveNav, { passive: true });
 
-  // ---- Mobile Menu ----
+  // ---- Mobile Drawer ----
   const mobileToggle = document.getElementById('mobileToggle');
-  const navLinksContainer = document.getElementById('navLinks');
+  const mobileDrawer = document.getElementById('mobileDrawer');
   const mobileOverlay = document.getElementById('mobileOverlay');
-  const navClose = document.getElementById('navClose');
+  const drawerClose = document.getElementById('drawerClose');
 
-  const openMobileMenu = () => {
+  const openDrawer = () => {
     mobileToggle.classList.add('active');
-    navLinksContainer.classList.add('show');
+    mobileDrawer.classList.add('open');
     mobileOverlay.classList.add('show');
     document.body.style.overflow = 'hidden';
   };
 
-  const closeMobileMenu = () => {
+  const closeDrawer = () => {
     mobileToggle.classList.remove('active');
-    navLinksContainer.classList.remove('show');
+    mobileDrawer.classList.remove('open');
     mobileOverlay.classList.remove('show');
     document.body.style.overflow = '';
   };
 
   mobileToggle.addEventListener('click', (e) => {
     e.stopPropagation();
-    if (navLinksContainer.classList.contains('show')) {
-      closeMobileMenu();
+    if (mobileDrawer.classList.contains('open')) {
+      closeDrawer();
     } else {
-      openMobileMenu();
+      openDrawer();
     }
   });
-  if (navClose) navClose.addEventListener('click', closeMobileMenu);
-  mobileOverlay.addEventListener('click', closeMobileMenu);
 
-  navLinksContainer.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      if (navLinksContainer.classList.contains('show')) {
-        toggleMobileMenu();
-      }
-    });
+  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+  mobileOverlay.addEventListener('click', closeDrawer);
+
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', closeDrawer);
   });
 
   // ---- Product Variants & Image Mapping ----
