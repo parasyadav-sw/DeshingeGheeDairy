@@ -363,7 +363,7 @@ ul {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
-  z-index: 1100;
+  z-index: 1199;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -384,7 +384,7 @@ ul {
   width: 80%;
   max-width: 320px;
   background: var(--white);
-  z-index: 1101;
+  z-index: 1200;
   transform: translateX(-100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;

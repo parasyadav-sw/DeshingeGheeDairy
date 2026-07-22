@@ -41,18 +41,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileDrawer = document.getElementById('mobileDrawer');
   const mobileOverlay = document.getElementById('mobileOverlay');
   const drawerClose = document.getElementById('drawerClose');
+  const navLinksDesktop = document.getElementById('navLinksDesktop');
+
+  // Ensure desktop nav is hidden on mobile via JS (backup for CSS caching)
+  const handleResponsiveNav = () => {
+    if (window.innerWidth <= 768) {
+      if (navLinksDesktop) navLinksDesktop.style.display = 'none';
+      if (mobileToggle) mobileToggle.style.display = 'flex';
+    } else {
+      if (navLinksDesktop) navLinksDesktop.style.display = '';
+      if (mobileToggle) mobileToggle.style.display = '';
+      closeDrawer();
+    }
+  };
+  handleResponsiveNav();
+  window.addEventListener('resize', handleResponsiveNav);
 
   const openDrawer = () => {
     mobileToggle.classList.add('active');
     mobileDrawer.classList.add('open');
+    mobileDrawer.style.transform = 'translateX(0)';
     mobileOverlay.classList.add('show');
+    mobileOverlay.style.opacity = '1';
+    mobileOverlay.style.visibility = 'visible';
     document.body.style.overflow = 'hidden';
   };
 
   const closeDrawer = () => {
     mobileToggle.classList.remove('active');
     mobileDrawer.classList.remove('open');
+    mobileDrawer.style.transform = 'translateX(-100%)';
     mobileOverlay.classList.remove('show');
+    mobileOverlay.style.opacity = '0';
+    mobileOverlay.style.visibility = 'hidden';
     document.body.style.overflow = '';
   };
 
