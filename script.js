@@ -37,16 +37,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileToggle = document.getElementById('mobileToggle');
   const navLinksContainer = document.getElementById('navLinks');
   const mobileOverlay = document.getElementById('mobileOverlay');
+  const navClose = document.getElementById('navClose');
 
-  const toggleMobileMenu = () => {
-    mobileToggle.classList.toggle('active');
-    navLinksContainer.classList.toggle('show');
-    mobileOverlay.classList.toggle('show');
-    document.body.style.overflow = navLinksContainer.classList.contains('show') ? 'hidden' : '';
+  const openMobileMenu = () => {
+    mobileToggle.classList.add('active');
+    navLinksContainer.classList.add('show');
+    mobileOverlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
   };
 
-  mobileToggle.addEventListener('click', toggleMobileMenu);
-  mobileOverlay.addEventListener('click', toggleMobileMenu);
+  const closeMobileMenu = () => {
+    mobileToggle.classList.remove('active');
+    navLinksContainer.classList.remove('show');
+    mobileOverlay.classList.remove('show');
+    document.body.style.overflow = '';
+  };
+
+  mobileToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (navLinksContainer.classList.contains('show')) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  });
+  if (navClose) navClose.addEventListener('click', closeMobileMenu);
+  mobileOverlay.addEventListener('click', closeMobileMenu);
 
   navLinksContainer.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
@@ -284,8 +300,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('buyNow').addEventListener('click', () => {
     addToCart();
-    showToast('Proceeding to checkout...');
+    openWhatsAppCheckout();
   });
+
+  // ---- WhatsApp Checkout ----
+  const WHATSAPP_PHONE = '919762950684';
+
+  const openWhatsAppCheckout = () => {
+    if (cart.length === 0) {
+      showToast('Your cart is empty.');
+      return;
+    }
+
+    const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+    let itemsText = '';
+    cart.forEach((item, i) => {
+      itemsText += `\u2022 Product: Deshinge A2 Gir Cow Ghee\n`;
+      itemsText += `\u2022 Size: ${item.variant}\n`;
+      itemsText += `\u2022 Quantity: ${item.qty}\n`;
+      itemsText += `\u2022 Price: \u20B9${item.price.toLocaleString('en-IN')} each\n`;
+      if (i < cart.length - 1) {
+        itemsText += `\n`;
+      }
+    });
+
+    const message = `\uD83D\uDED2 New Order Request\n\nHello Deshinge Dairy Farm,\n\nI would like to place the following order:\n\n${itemsText}\n-----------------------------\nTotal Amount: \u20B9${total.toLocaleString('en-IN')}\n-----------------------------\n\nPlease confirm my order. Thank you!`;
+
+    const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
+
+  document.getElementById('whatsappCheckout').addEventListener('click', openWhatsAppCheckout);
 
   const updateCartTotal = () => {
     // Update cart items if variant price changed
@@ -387,31 +433,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const productSection = document.getElementById('ghee');
 
   if (stickyCart && productSection) {
-    const stickyObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (window.innerWidth <= 768) {
-          if (entry.isIntersecting) {
-            stickyCart.style.opacity = '0';
-            stickyCart.style.pointerEvents = 'none';
-            stickyCart.style.transform = 'translateY(100%)';
-          } else {
-            stickyCart.style.opacity = '1';
-            stickyCart.style.pointerEvents = 'auto';
-            stickyCart.style.transform = 'translateY(0)';
-          }
+    const updateStickyCart = () => {
+      if (window.innerWidth <= 768) {
+        const rect = productSection.getBoundingClientRect();
+        const isProductVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        if (isProductVisible) {
+          stickyCart.style.display = 'none';
+        } else {
+          stickyCart.style.display = 'flex';
+          stickyCart.style.transform = 'translateY(0)';
         }
-      });
+      } else {
+        stickyCart.style.display = 'none';
+      }
+    };
+
+    const stickyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(() => updateStickyCart());
     }, { threshold: 0 });
 
     stickyObserver.observe(productSection);
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        stickyCart.style.opacity = '0';
-        stickyCart.style.pointerEvents = 'none';
-        stickyCart.style.transform = 'translateY(100%)';
-      }
-    });
+    window.addEventListener('scroll', updateStickyCart, { passive: true });
+    window.addEventListener('resize', updateStickyCart);
   }
 
   // ---- Add transition to product image ----

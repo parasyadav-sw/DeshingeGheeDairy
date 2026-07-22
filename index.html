@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deshinge Dairy Farm — 100% Pure A2 Gir Cow Ghee</title>
+  <title>Deshinge Dairy Farm | 100% Pure A2 Gir Cow Ghee</title>
   <meta name="description" content="Deshinge Dairy Farm produces authentic A2 Gir Cow Ghee using the traditional Bilona method, ensuring purity, nutrition, and rich taste. Farm fresh, chemical free.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +45,13 @@
       </a>
 
       <nav class="nav-links" id="navLinks">
+        <button class="nav-close" id="navClose" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="nav-links-brand">
+          <span class="nav-links-brand-name">Deshinge Dairy Farm</span>
+          <span class="nav-links-brand-tag">Farm To Home</span>
+        </div>
         <a href="#home" class="nav-link active">Home</a>
         <a href="#ghee" class="nav-link">Our Ghee</a>
         <a href="#story" class="nav-link">Our Story</a>
@@ -241,7 +248,7 @@
             </div>
             <div class="meta-item">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span>In Stock — Ships within 24 hours</span>
+              <span>In Stock, Ships within 24 hours</span>
             </div>
             <div class="meta-item">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -257,33 +264,49 @@
   <section class="product-details">
     <div class="container">
       <div class="details-grid">
-        <div class="detail-card">
-          <div class="detail-icon">
-            <svg viewBox="0 0 48 48" fill="none"><path d="M24 4C14 4 6 12 6 22c0 8 6 14 14 18 2-2 4-4 4-7V16c0-1 1-2 2-2s2 1 2 2v17c0 3 2 5 4 7 8-4 14-10 14-18C42 12 34 4 24 4z" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.1"/></svg>
+        <div class="detail-card detail-card--cow">
+          <img class="detail-card-bg" src="images/cow-pasture.jpg.png" alt="" loading="lazy">
+          <div class="detail-card-overlay"></div>
+          <div class="detail-card-content">
+            <div class="detail-icon">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M24 4C14 4 6 12 6 22c0 8 6 14 14 18 2-2 4-4 4-7V16c0-1 1-2 2-2s2 1 2 2v17c0 3 2 5 4 7 8-4 14-10 14-18C42 12 34 4 24 4z" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.1"/></svg>
+            </div>
+            <h4>A2 Milk Source</h4>
+            <p>Our Gir cows are grass-fed and free-grazing, producing A2 beta-casein rich milk that is easier to digest and naturally nutritious.</p>
           </div>
-          <h4>A2 Milk Source</h4>
-          <p>Our Gir cows are grass-fed and free-grazing, producing A2 beta-casein rich milk — easier to digest and naturally nutritious.</p>
         </div>
-        <div class="detail-card">
-          <div class="detail-icon">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.1"/><path d="M24 10v14l10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <div class="detail-card detail-card--bilona">
+          <img class="detail-card-bg" src="images/bilona-churning.jpg.png" alt="" loading="lazy">
+          <div class="detail-card-overlay"></div>
+          <div class="detail-card-content">
+            <div class="detail-icon">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.1"/><path d="M24 10v14l10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h4>Traditional Bilona Method</h4>
+            <p>Milk is set into curd, then hand-churned to extract butter, which is slowly heated on a wood fire to produce golden ghee.</p>
           </div>
-          <h4>Traditional Bilona Method</h4>
-          <p>Milk is set into curd, then hand-churned to extract butter, which is slowly heated on a wood fire to produce golden ghee.</p>
         </div>
-        <div class="detail-card">
-          <div class="detail-icon">
-            <svg viewBox="0 0 48 48" fill="none"><path d="M8 38c0-8 7-14 16-14s16 6 16 14" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.1"/><circle cx="24" cy="16" r="6" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.1"/></svg>
+        <div class="detail-card detail-card--batch">
+          <img class="detail-card-bg" src="images/brass-ghee.jpg.png" alt="" loading="lazy">
+          <div class="detail-card-overlay"></div>
+          <div class="detail-card-content">
+            <div class="detail-icon">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M8 38c0-8 7-14 16-14s16 6 16 14" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.1"/><circle cx="24" cy="16" r="6" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.1"/></svg>
+            </div>
+            <h4>Small Batch Preparation</h4>
+            <p>Each batch is carefully monitored in small quantities, ensuring consistent quality, rich texture, and authentic aroma.</p>
           </div>
-          <h4>Small Batch Preparation</h4>
-          <p>Each batch is carefully monitored in small quantities, ensuring consistent quality, rich texture, and authentic aroma.</p>
         </div>
-        <div class="detail-card">
-          <div class="detail-icon">
-            <svg viewBox="0 0 48 48" fill="none"><path d="M14 14l20 20M14 34L34 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.1"/></svg>
+        <div class="detail-card detail-card--pure">
+          <img class="detail-card-bg" src="images/pure-ghee-jar.jpg.png" alt="" loading="lazy">
+          <div class="detail-card-overlay"></div>
+          <div class="detail-card-content">
+            <div class="detail-icon">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M14 14l20 20M14 34L34 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.1"/></svg>
+            </div>
+            <h4>No Preservatives</h4>
+            <p>Absolutely no additives, chemicals, or preservatives. Just pure ghee made the way it has been for thousands of years.</p>
           </div>
-          <h4>No Preservatives</h4>
-          <p>Absolutely no additives, chemicals, or preservatives. Just pure ghee made the way it has been for thousands of years.</p>
         </div>
       </div>
     </div>
@@ -317,7 +340,7 @@
             <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="currentColor" fill-opacity="0.06"/><path d="M24 28l4 4 12-12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="18" y="18" width="28" height="28" rx="4" stroke="currentColor" stroke-width="2"/></svg>
           </div>
           <h4>Natural Vitamins</h4>
-          <p>Rich source of Vitamins A, D, E, and K — essential for vision, immunity, bone health, and cell repair.</p>
+          <p>Rich source of Vitamins A, D, E, and K, essential for vision, immunity, bone health, and cell repair.</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">
@@ -331,7 +354,7 @@
             <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="currentColor" fill-opacity="0.06"/><path d="M32 20c-3 0-6 2-6 6 0 8 6 14 6 14s6-6 6-14c0-4-3-6-6-6z" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="2"/></svg>
           </div>
           <h4>Traditional Nutrition</h4>
-          <p>Used in Ayurveda for millennia — ghee lubricates joints, nourishes skin, and supports overall vitality.</p>
+          <p>Used in Ayurveda for millennia, ghee lubricates joints, nourishes skin, and supports overall vitality.</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">
@@ -372,7 +395,7 @@
           <div class="step-number">01</div>
           <div class="step-content">
             <h4>Milk Collection</h4>
-            <p>Fresh A2 milk is collected daily from our free-grazing Gir cows. The milk is never stored for long — freshness is paramount.</p>
+            <p>Fresh A2 milk is collected daily from our free-grazing Gir cows. The milk is never stored for long, as freshness is paramount.</p>
           </div>
           <div class="step-icon">
             <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="currentColor" fill-opacity="0.08"/><path d="M26 44V28c0-3.3 2.7-6 6-6s6 2.7 6 6v16" stroke="currentColor" stroke-width="2"/><ellipse cx="32" cy="22" rx="8" ry="4" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.1"/></svg>
@@ -392,7 +415,7 @@
           <div class="step-number">03</div>
           <div class="step-content">
             <h4>Hand Churning</h4>
-            <p>The curd is hand-churned using a wooden churner (Bilona) in a traditional rhythmic motion — separating butter from buttermilk.</p>
+            <p>The curd is hand-churned using a wooden churner (Bilona) in a traditional rhythmic motion, separating butter from buttermilk.</p>
           </div>
           <div class="step-icon">
             <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="currentColor" fill-opacity="0.08"/><path d="M32 18v28M22 24l10 8 10-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="32" cy="40" rx="8" ry="3" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.1"/></svg>
@@ -402,7 +425,7 @@
           <div class="step-number">04</div>
           <div class="step-content">
             <h4>Butter Extraction</h4>
-            <p>Fresh white butter (Makkhan) floats to the top. It is carefully collected — pure, soft, and full of cream.</p>
+            <p>Fresh white butter (Makkhan) floats to the top. It is carefully collected: pure, soft, and full of cream.</p>
           </div>
           <div class="step-icon">
             <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="currentColor" fill-opacity="0.08"/><ellipse cx="32" cy="34" rx="10" ry="8" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.15"/><path d="M22 34c0-5.5 4.5-10 10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/></svg>
@@ -513,9 +536,9 @@
         <div class="farm-content">
           <span class="section-label">Our Story</span>
           <h2 class="section-title">From Our Farm<br><em>To Your Kitchen</em></h2>
-          <p class="farm-text">Deshinge Dairy Farm produces authentic A2 Gir Cow Ghee using the traditional Bilona method, ensuring purity, nutrition, and rich taste. Our journey began with a simple belief — that food should be pure, honest, and grown with care.</p>
+          <p class="farm-text">Deshinge Dairy Farm produces authentic A2 Gir Cow Ghee using the traditional Bilona method, ensuring purity, nutrition, and rich taste. Our journey began with a simple belief: that food should be pure, honest, and grown with care.</p>
           <p class="farm-text">On our family farm at Tambale Bypass Road, Hatkanangale, Kolhapur, our Gir cows live freely, graze on natural pastures, and are treated with the respect they deserve. Every morning, fresh A2 milk is collected and transformed into golden ghee using methods that haven't changed in generations.</p>
-          <p class="farm-text">When you open a jar of Deshinge Ghee, you're not just buying a product — you're embracing a way of life that values purity, sustainability, and the timeless wisdom of traditional Indian dairy farming.</p>
+          <p class="farm-text">When you open a jar of Deshinge Ghee, you're not just buying a product. You're embracing a way of life that values purity, sustainability, and the timeless wisdom of traditional Indian dairy farming.</p>
           <div class="farm-stats">
             <div class="stat">
               <span class="stat-number">500+</span>
@@ -594,7 +617,7 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="review-text">"The aroma is incredible. It takes me back to my grandmother's kitchen. Best ghee I've bought online — pure, authentic, and worth every penny."</p>
+            <p class="review-text">"The aroma is incredible. It takes me back to my grandmother's kitchen. Best ghee I've bought online: pure, authentic, and worth every penny."</p>
             <div class="review-author">
               <div class="author-avatar">P</div>
               <div>
@@ -645,7 +668,7 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="review-text">"As a nutritionist, I recommend A2 ghee to all my clients. Deshinge Dairy Farm delivers exactly what they promise — pure, lab-tested, and traditional Bilona ghee."</p>
+            <p class="review-text">"As a nutritionist, I recommend A2 ghee to all my clients. Deshinge Dairy Farm delivers exactly what they promise: pure, lab-tested, and traditional Bilona ghee."</p>
             <div class="review-author">
               <div class="author-avatar">D</div>
               <div>
@@ -982,7 +1005,7 @@
         <span>Total</span>
         <span id="cartTotal">₹0</span>
       </div>
-      <button class="btn btn-primary btn-full">Proceed to Checkout</button>
+      <button class="btn btn-primary btn-full" id="whatsappCheckout">Proceed to Checkout</button>
       <p class="cart-note">Shipping calculated at checkout. Free above ₹1,499.</p>
     </div>
   </aside>
