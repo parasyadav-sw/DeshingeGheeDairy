@@ -1,5 +1,5 @@
 // ============================================
-// DESHINGE DAIRY FARM — Website Interactivity
+// DESHINGE DAIRY FARM | Website Interactivity
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -84,10 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentVariant = '500ml';
 
   const productImages = {
-    "250ml":   { src: "images/250.png",  alt: "Deshinge A2 Gir Cow Ghee — 250 ml" },
-    "500ml":   { src: "images/500.png",  alt: "Deshinge A2 Gir Cow Ghee — 500 ml" },
-    "1000ml":  { src: "images/1L.png",   alt: "Deshinge A2 Gir Cow Ghee — 1 Litre" },
-    "5000ml":  { src: "images/product image.png", alt: "Deshinge A2 Gir Cow Ghee — 5 Litre" }
+    "250ml":   { src: "images/250.png",  alt: "Deshinge A2 Gir Cow Ghee, 250 ml" },
+    "500ml":   { src: "images/500.png",  alt: "Deshinge A2 Gir Cow Ghee, 500 ml" },
+    "1000ml":  { src: "images/1L.png",   alt: "Deshinge A2 Gir Cow Ghee, 1 Litre" },
+    "5000ml":  { src: "images/product image.png", alt: "Deshinge A2 Gir Cow Ghee, 5 Litre" }
   };
 
   const preloadImages = () => {
