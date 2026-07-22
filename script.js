@@ -390,7 +390,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const stickyObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (window.innerWidth <= 768) {
-          stickyCart.style.display = entry.isIntersecting ? 'none' : 'flex';
+          if (entry.isIntersecting) {
+            stickyCart.style.opacity = '0';
+            stickyCart.style.pointerEvents = 'none';
+            stickyCart.style.transform = 'translateY(100%)';
+          } else {
+            stickyCart.style.opacity = '1';
+            stickyCart.style.pointerEvents = 'auto';
+            stickyCart.style.transform = 'translateY(0)';
+          }
         }
       });
     }, { threshold: 0 });
@@ -399,7 +407,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768) {
-        stickyCart.style.display = 'none';
+        stickyCart.style.opacity = '0';
+        stickyCart.style.pointerEvents = 'none';
+        stickyCart.style.transform = 'translateY(100%)';
       }
     });
   }
