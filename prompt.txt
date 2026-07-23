@@ -1,57 +1,34 @@
 
------------------------------cards background 	
-Enhance the feature cards by adding a premium, luxury border that complements the organic ghee brand. Do not use a plain black or white border. Instead, add a subtle 2–3px warm gold border (#D4A44D) with 20–30% opacity so it looks elegant rather than overpowering. Add a soft inner highlight (rgba(255,255,255,0.15)) and a gentle outer shadow (0 12px 30px rgba(0,0,0,0.15)) to create depth. Keep the existing 24px rounded corners and ensure the border follows the same radius.
-
-On hover, smoothly animate the card by slightly increasing the border brightness to full gold (#D4A44D), lifting the card by translateY(-6px), increasing the shadow, and scaling it to 1.02. The animation should be smooth (300ms ease).
-
-The border should look like a premium photo frame, making the images stand out without distracting from the content. Maintain consistent spacing, equal border thickness, and identical styling across all four cards. The final appearance should resemble a luxury handcrafted organic brand rather than a generic website.
-
-
 
 -------------------------------------------------video
-1. Milk Collection
+Use the locally stored videos from the project's /videos folder instead of placeholder content or external URLs. Replace the circular icons in the Process section with the corresponding videos from the local folder.
 
-A cinematic, ultra-realistic video of a healthy Gir cow being gently milked by an Indian farmer during golden sunrise on a lush green dairy farm. Fresh A2 milk flows naturally into a traditional stainless-steel bucket. The cows are free-grazing, calm, and well cared for. Warm golden sunlight, soft breeze, natural rural atmosphere, shallow depth of field, smooth camera movement, premium documentary-style cinematography, highly detailed, 4K, no text, no watermark, seamless loop.
-Ultra-realistic, cinematic, luxury food documentary, authentic Indian village, warm golden color grading, smooth camera movement, shallow depth of field, soft natural lighting, highly detailed textures, 4K HDR, 24fps, seamless 5–8 second loop, premium quality, no logos, no captions, no watermark, no AI artifacts.
-2. Curd Formation
+Requirements:
 
-A cinematic close-up of fresh A2 milk being poured into a traditional clay pot, followed by natural curd formation. Show creamy milk settling inside the earthen pot in a rustic Indian kitchen with brass utensils and warm sunlight. Focus on purity, freshness, and traditional fermentation. Slow cinematic camera movement, soft natural lighting, ultra-realistic textures, premium food documentary style, 4K, no text, no watermark, seamless loop.
-Ultra-realistic, cinematic, luxury food documentary, authentic Indian village, warm golden color grading, smooth camera movement, shallow depth of field, soft natural lighting, highly detailed textures, 4K HDR, 24fps, seamless 5–8 second loop, premium quality, no logos, no captions, no watermark, no AI artifacts.
-3. Hand Churning (Bilona Method)
+Load each video directly from the local /videos directory.
+Map the videos correctly:
+milk-collection.mp4 → Milk Collection
+curd-formation.mp4 → Curd Formation
+hand-churning.mp4 → Hand Churning
+butter-extraction.mp4 → Butter Extraction
+slow-heating.mp4 → Slow Heating
+handcrafted-ghee.mp4 → Handcrafted Ghee
+pure-packed.mp4 → Pure & Packed
+Replace only the right-side icon with the corresponding video while keeping the timeline layout unchanged.
+Each video should autoplay, be muted, loop continuously, and use playsinline.
+Remove all video controls, play buttons, progress bars, and overlays.
+Display the videos in a clean 16:9 rectangular frame with 8–12px border radius, object-fit: cover, and a subtle warm gold border (#D4A44D with low opacity).
+Add a soft shadow to blend naturally with the website's premium handcrafted theme.
+Keep all videos aligned with their respective process step and ensure equal spacing throughout the timeline.
+On hover, apply a smooth scale(1.02) effect with a subtle shadow enhancement.
+On mobile devices, stack each video below its corresponding text while preserving proper spacing and responsiveness.
+If any video file is missing, gracefully display the existing icon instead of breaking the layout.
+Do not modify the existing headings, descriptions, timeline numbers, styling, or functionality. Only replace the icons with the appropriate locally stored videos and ensure everything remains fully responsive.
 
-A photorealistic cinematic video of a village woman hand-churning curd using a traditional wooden Bilona churner inside a large clay pot. The rope moves rhythmically while butter slowly separates from buttermilk. Rustic Indian village kitchen with clay walls, brass vessels, warm golden lighting, authentic handcrafted process, slow camera motion, documentary-style cinematography, ultra-detailed, 4K, no text, no watermark, seamless loop.
-Ultra-realistic, cinematic, luxury food documentary, authentic Indian village, warm golden color grading, smooth camera movement, shallow depth of field, soft natural lighting, highly detailed textures, 4K HDR, 24fps, seamless 5–8 second loop, premium quality, no logos, no captions, no watermark, no AI artifacts.
-4. Butter Extraction
 
-A cinematic close-up of fresh white Makhan (traditional butter) naturally floating to the top of a clay pot after churning. Gentle hands carefully collect the butter into a brass bowl using a wooden spoon. Rich creamy texture, warm golden lighting, rustic Indian kitchen, shallow depth of field, slow-motion food cinematography, ultra-realistic, premium documentary style, 4K, no text, no watermark, seamless loop.
-Ultra-realistic, cinematic, luxury food documentary, authentic Indian village, warm golden color grading, smooth camera movement, shallow depth of field, soft natural lighting, highly detailed textures, 4K HDR, 24fps, seamless 5–8 second loop, premium quality, no logos, no captions, no watermark, no AI artifacts.
 
 
 --------------------------------whatsapp msg 
 symbol not showing 
 
 
------------------------------------------benifits
-Redesign the "Benefits" cards to give them a premium, handcrafted luxury appearance while preserving the existing content and grid layout. Do not change the text or icons.
-
-Replace the plain white background with a subtle warm ivory-to-cream gradient (#FFFDF8 → #FAF4E8).
-Add a thin 1.5px premium gold border (#D4A44D) with low opacity (25–30%) around every card.
-Increase the border radius to 24px for a softer, modern appearance.
-Add a soft layered shadow (0 12px 30px rgba(0,0,0,0.08)) so the cards appear elevated without looking heavy.
-Make every card the exact same height and width with perfectly consistent spacing.
-Increase the size of the icon container slightly and give it a subtle radial cream background with a faint gold ring.
-Make the icons slightly larger and use the brand gold color consistently.
-Increase the heading size and weight using Cormorant Garamond or Playfair Display.
-Improve readability by using Inter or Manrope for the description with a slightly darker text color.
-Increase vertical spacing between the icon, heading, and description so the content can breathe.
-Add a subtle decorative gold accent line (40–60px wide) below each heading.
-On hover:
-Lift the card by 6–8px.
-Slightly scale to 1.02.
-Increase the shadow.
-Brighten the gold border.
-Add a soft warm glow around the card.
-Animate all transitions smoothly in 300ms ease.
-Give each card a slightly different hover rotation (0.5°–1°) so the interaction feels handcrafted rather than mechanical.
-Ensure every card remains perfectly responsive on desktop, tablet, and mobile.
-Keep the section elegant, minimal, and premium—similar to a luxury organic food or artisanal dairy brand, avoiding any appearance of a generic template or AI-generated design.
